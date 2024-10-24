@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import ToDoWeb from './pages/ToDoWeb';
 
 function App() {
   return (
     <>
       <div>
-        ToDo web from react with backend
+        <ToDoWeb/>
       </div>
     </>
   );
