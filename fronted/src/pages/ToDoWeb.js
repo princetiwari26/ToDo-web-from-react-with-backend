@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 function ToDoWeb() {
     let [todoData, setTodoData] = useState([]);
@@ -58,7 +59,7 @@ function ToDoWeb() {
                                 type="textarea"
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
-                                placeholder="Enter Your Mission"
+                                placeholder="Enter Your Mission or Goal"
                                 required
                             />
                             <button onClick={handleSubmit}>
@@ -72,8 +73,8 @@ function ToDoWeb() {
                         {todoData.map((v, i) => {
                             return (
                                 <>
-                                    <div style={{ display: "flex" }}>
-                                        <li key={i}>
+                                    <div key={i} style={{ display: "flex" }}>
+                                        <li>
                                             <div className="content">
                                                 {i + 1}.<p>{v.title}</p>
                                             </div>
